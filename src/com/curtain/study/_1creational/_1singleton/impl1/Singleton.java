@@ -1,4 +1,4 @@
-package com.curtain.study.singleton;
+package com.curtain.study._1creational._1singleton.impl1;
 
 /**
  * 懒汉式线程不安全
@@ -9,17 +9,17 @@ package com.curtain.study.singleton;
  * @author Curtain
  * @date 2018/7/3 9:21
  */
-public class Singleton1 {
-    private static Singleton1 singleton1;
+public class Singleton {
+    private static Singleton singleton;
 
-    private Singleton1() {
+    private Singleton() {
     }
 
-    public static Singleton1 getInstance() {
-        if (singleton1 == null) {
-            singleton1 = new Singleton1();
+    public static Singleton getInstance() {
+        if (singleton == null) {
+            singleton = new Singleton();
         }
-        return singleton1;
+        return singleton;
     }
 
 }

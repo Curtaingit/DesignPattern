@@ -1,4 +1,4 @@
-package com.curtain.study.singleton;
+package com.curtain.study._1creational._1singleton.impl4;
 
 /**
  * 双重校验锁
@@ -9,21 +9,21 @@ package com.curtain.study.singleton;
  * @author Curtain
  * @date 2018/7/3 9:31
  */
-public class Singleton4 {
+public class Singleton {
 
-    private volatile static Singleton4 singleton4;
+    private volatile static Singleton singleton;
 
-    private Singleton4() {
+    private Singleton() {
     }
 
-    private static Singleton4 getInstance() {
-        if (singleton4 == null) {
-            synchronized (Singleton4.class) {
-                if (singleton4 == null) {
-                    singleton4 = new Singleton4();
+    private static Singleton getInstance() {
+        if (singleton == null) {
+            synchronized (Singleton.class) {
+                if (singleton == null) {
+                    singleton = new Singleton();
                 }
             }
         }
-        return singleton4;
+        return singleton;
     }
 }

@@ -1,4 +1,4 @@
-package com.curtain.study.singleton;
+package com.curtain.study._1creational._1singleton.impl5;
 
 /**
  * 枚举实现
@@ -18,7 +18,7 @@ enum Singleton {
 }
 
 
-public class Singleton5 {
+public class SingletonTest {
 
     public static void main(String[] args) {
         Singleton singleton = Singleton.Singleton;

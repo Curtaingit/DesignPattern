@@ -1,7 +1,6 @@
-package com.curtain.study.singleton;
+package com.curtain.study._1creational._1singleton.impl6;
 
 import java.io.Serializable;
-import java.util.function.Predicate;
 
 /**
  * 序列化和反射会使单例失效
@@ -12,32 +11,32 @@ import java.util.function.Predicate;
  * @author Curtain
  * @date 2018/7/3 9:52
  */
-public class Singleton6 implements Serializable {
+public class Singleton implements Serializable {
 
     //避免序列化
 //    private static final long serialVersionUID = 1L;
 //
-//    private static Singleton6 singleton6 = new Singleton6();
+//    private static Singleton singleton = new Singleton();
 //
-//    private Singleton6() {
+//    private Singleton() {
 //    }
 //
-//    public static Singleton6 getInstance() {
-//        return singleton6;
+//    public static Singleton getInstance() {
+//        return singleton;
 //    }
 //
 //    private Object readResolve(){
-//        return singleton6;
+//        return singleton;
 //    }
 
     //避免反射破坏
     private static boolean flag = false;
     private static final long serialVersionUID = 1L;
 
-    private static Singleton6 singleton6 = new Singleton6();
+    private static Singleton singleton = new Singleton();
 
-    private Singleton6() {
-        synchronized (Singleton6.class) {
+    private Singleton() {
+        synchronized (Singleton.class) {
             if (flag == false) {
                 //第一次初始化
                 flag = !flag;
@@ -47,11 +46,11 @@ public class Singleton6 implements Serializable {
         }
     }
 
-    public static Singleton6 getInstance() {
-        return singleton6;
+    public static Singleton getInstance() {
+        return singleton;
     }
 
     private Object readResolve() {
-        return singleton6;
+        return singleton;
     }
 }
