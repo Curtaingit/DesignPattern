@@ -1,5 +1,10 @@
 package com.curtain.study._2behavior._3interpreter;
 
+
+import javax.jws.soap.SOAPBinding;
+import javax.lang.model.type.NullType;
+import java.lang.ref.ReferenceQueue;
+
 /**
  * 解释器模式
  * 实现了一个表达式接口，该接口解释一个特定的上下文。
@@ -33,7 +38,33 @@ public class Client {
         System.out.println(define.interpret(context1));
         System.out.println(define.interpret(context2));
 
-        Integer i =3;
+        User user = new User();
+        User user1 = user;
+        user.setName("111");
+        System.out.println(user.getName());
+        new Client().pass(user,user);
+        System.out.println(user.getName());
+        user1.setName("111");
+        System.out.println(user.getName());
 
+
+    }
+
+    private static class User{
+        String name;
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+    }
+
+    public void pass(User user,User user2){
+        user.setName("hahah");
+        System.out.println(user==user2);
+//        System.out.println(user.getName());
     }
 }
