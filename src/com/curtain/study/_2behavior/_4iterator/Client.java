@@ -1,5 +1,8 @@
 package com.curtain.study._2behavior._4iterator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 迭代器
  * 提供一种顺序访问聚合对象元素的方法，并且不暴露聚合对象的内部表示。
@@ -23,9 +26,9 @@ public class Client {
 //        Iterator<Integer> iterator = aggregate.createIterator(items);
 
 
-
         while (iterator.hasNext()){
             System.out.println(iterator.next());
         }
     }
+
 }
